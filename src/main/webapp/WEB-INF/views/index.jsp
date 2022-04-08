@@ -7,12 +7,11 @@
 		<meta charset="UTF-8">
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript">
-			$( document ).ready( function(){
-				obj.location.href = "${reqContextPath}/main";
-			}
+			$(function(){
+				location.href = "/main";
+			});
 		</script>
 	</head>
 	<body>
-		Hello World
 	</body>
 </html>

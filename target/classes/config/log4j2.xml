@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%d][%p][%c] - %m%n"/>
+			<!--<PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>-->
+		</Console>
+
+		<!--log 파일을 저장하는 위치와 정책 -->
+		<!-- <RollingFile name="FILE">
+			<FileName>${sys:user.home}/logs/rolling.log</FileName>
+			<FilePattern>${sys:user.home}/logs/rolling.%d{yyyy-MM-dd}.log</FilePattern>
+			<PatternLayout pattern="[%d][%p] - %m%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy max="1000" />
+		</RollingFile> -->
+	</Appenders>
+	<Loggers>
+		<!-- 기본(디폴트) loger 설정-->
+		<Root level="DEBUG">
+			<AppenderRef ref="CONSOLE"/>
+			<!--<AppenderRef ref="FILE"/>-->
+		</Root>
+
+		<Logger name="org.apache.catalina" level="WARN" additivity="false">
+			<AppenderRef ref="CONSOLE"/>
+			<!--<AppenderRef ref="FILE"/>-->
+		</Logger>
+
+		<Logger name="org.apache.jasper" level="WARN" additivity="false">
+			<AppenderRef ref="CONSOLE"/>
+			<!--<AppenderRef ref="FILE"/>-->
+		</Logger>
+
+		<Logger name="org.springframework" level="WARN" additivity="false">
+			<AppenderRef ref="CONSOLE"/>
+			<!--<AppenderRef ref="FILE"/>-->
+		</Logger>
+
+		<Logger name="org.aspectj" level="DEBUG" additivity="false">
+			<AppenderRef ref="CONSOLE"/>
+			<!--<AppenderRef ref="FILE"/>-->
+		</Logger>
+
+		<Logger name="net.e4net" level="DEBUG" additivity="false">
+			<AppenderRef ref="CONSOLE"/>
+			<!--<AppenderRef ref="FILE"/>-->
+		</Logger>
+
+		<Logger name="com.zaxxer.hikari" level="WARN" additivity="false">
+			<AppenderRef ref="CONSOLE"/>
+			<!--<AppenderRef ref="FILE"/>-->
+		</Logger>
+		
+		<!-- <Logger name="java.sql" level="DEBUG" additivity="false">
+			<AppenderRef ref="CONSOLE"/>
+			<AppenderRef ref="FILE"/>
+		</Logger> -->
+
+		<Logger name="jdbc" level="OFF" additivity="false"> 
+			<AppenderRef ref="CONSOLE"/>
+			<!--<AppenderRef ref="FILE"/>-->
+		</Logger>
+		<Logger name="jdbc.sqlonly" level="DEBUG" additivity="false">
+			<AppenderRef ref="CONSOLE"/>
+			<!--<AppenderRef ref="FILE"/>-->
+		</Logger>
+	</Loggers>
+</Configuration>

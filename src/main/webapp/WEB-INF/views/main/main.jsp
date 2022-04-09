@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>getTestTable TEST</title>
+<title>Main Page</title>
 </head>
 <body>
-	<c:out value="${dvo.testStr}"/>
+	<img src="resources/img/main_back1.jpeg" style="width:1425px;height:500px;">
 </body>
 </html>

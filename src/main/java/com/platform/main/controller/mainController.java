@@ -18,12 +18,11 @@ public class mainController {
 	public ModelAndView getMainPage() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/main/main");
-		
-		TestTableDVO dvo = new TestTableDVO();
-		dvo = testTableService.getTestTable(dvo);
-		System.out.println(dvo);
-		
-		mv.addObject("dvo", dvo);
+//		TestTableDVO dvo = new TestTableDVO();
+//		dvo = testTableService.getTestTable(dvo);
+//		System.out.println(dvo);
+//		
+//		mv.addObject("dvo", dvo);
 		return mv;
 	}
 }

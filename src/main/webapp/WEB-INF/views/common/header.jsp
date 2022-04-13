@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Main Page</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<img src="resources/img/main_back1.jpeg" style="width:1425px;height:500px;">
+
 </body>
 </html>

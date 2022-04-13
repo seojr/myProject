@@ -1,17 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@include file ="common/header.jsp" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Welcome to PIANO PLATFORM</title>
-		<meta charset="UTF-8">
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript">
-			$(function(){
-				location.href = "/main";
-			});
-		</script>
-	</head>
-	<body>
-	</body>
+<head>
+<title>Welcome to PIANO PLATFORM</title>
+<meta charset="UTF-8">
+<script type="text/javascript">
+	$(function(){
+		location.href = "main/mainPage.do";
+	});
+</script>
+</head>
+<body>
+</body>
 </html>

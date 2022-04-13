@@ -9,5 +9,6 @@
 
 	<typeAliases>
 		<typeAlias alias="testTableDVO" type="com.platform.main.domain.TestTableDVO"/>
+		<typeAlias alias="hrUserDVO" type="com.platform.login.domain.HrUserDVO"/>
 	</typeAliases>
 </configuration>

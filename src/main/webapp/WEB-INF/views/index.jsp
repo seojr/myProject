@@ -7,10 +7,12 @@
 <meta charset="UTF-8">
 <script type="text/javascript">
 	$(function(){
-		location.href = "main/mainPage.do";
+		submit($("#form1"), "/main/mainPage.do");
 	});
 </script>
 </head>
 <body>
+	<form id="form1">
+	</form>
 </body>
 </html>

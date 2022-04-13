@@ -7,12 +7,14 @@
 <title>Main Page</title>
 <script type="text/javascript">
 	function goLogin(){
-		location.href="login/loginPage.do";
+		submit($("#form1"), "/login/loginPage.do");
 	}
 </script>
 </head>
 <body>
-	<img src="resources/img/main_back1.jpeg" style="width:1425px;height:500px;">
-	<input type="button" value="log in" onClick="goLogin()" /> 
+	<form id="form1">
+	</form>
+	<img src="${pageContext.request.contextPath}/img/main_back1.jpeg" style="width:1425px;height:500px;">
+	<input type="button" value="log in" onClick="goLogin()" />
 </body>
 </html>

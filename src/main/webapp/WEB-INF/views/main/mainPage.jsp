@@ -5,16 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Main Page</title>
-<script type="text/javascript">
-	function goLogin(){
-		submit($("#form1"), "/login/loginPage.do");
-	}
-</script>
 </head>
 <body>
 	<form id="form1">
 	</form>
 	<img src="${pageContext.request.contextPath}/img/main_back1.jpeg" style="width:1425px;height:500px;">
-	<input type="button" value="log in" onClick="goLogin()" />
+	<input type="button" value="Go Login" onClick="goLogin()" />
+	
+	<script type="text/javascript">
+		function goLogin(){
+			submit($("#form1"), "/login/loginPage.do");
+		}
+		
+		let msg = "${alert}";
+		alert(msg);
+	</script>
 </body>
 </html>

@@ -10,5 +10,6 @@
 	<typeAliases>
 		<typeAlias alias="testTableDVO" type="com.platform.main.domain.TestTableDVO"/>
 		<typeAlias alias="hrUserDVO" type="com.platform.login.domain.HrUserDVO"/>
+		<typeAlias alias="hrUserPVO" type="com.platform.login.domain.HrUserPVO"/>
 	</typeAliases>
 </configuration>

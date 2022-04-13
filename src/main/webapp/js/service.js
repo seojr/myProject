@@ -1,12 +1,6 @@
-/**-----------------------------------------------------------------------------
- * Service 관련 처리- ajax, submit
- * 함수는 svcf_ 접두사로 한다.
- * 변수는 svcv_ 접두사로 한다.
- *----------------------------------------------------------------------------*/
-
-
 function submit(jqform, url, tar, mtd) {
 	var f = jqform[0];
+	console.log(f);
 	if (f.encoding.indexOf("multipart") > -1) {
 		f.encoding = "application/x-www-form-urlencoded";
 	}

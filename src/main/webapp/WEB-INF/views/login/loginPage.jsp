@@ -5,15 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <title>log in</title>
-<script type="text/javascript">
-	function doLogin(){
-		
-	}
-</script>
 </head>
 <body>
-	<input type="search" value="" placeholder="ID" />
-	<input type="password" value="" placeholder="PW" />
-	<input type="button" value="log in" onClick="doLogin()"/>
+	<form id="form1">
+		<input type="search" name="usrId" placeholder="ID" />
+		<input type="password" id="pwd" name="pwd" placeholder="PW" />
+		<input type="button" id="login" value="login" onClick="doLogin();" />
+	</form>
+	
+	<script type="text/javascript">
+		let pwdInputDom = document.getElementById('pwd');
+		
+		pwdInputDom.addEventListener('keyup', (event) => {
+			if(event.keyCode === 13)
+				doLogin();
+		});
+	
+		function doLogin(){
+			submit($("#form1"), "/login/login.do");
+		}
+	</script>
 </body>
 </html>

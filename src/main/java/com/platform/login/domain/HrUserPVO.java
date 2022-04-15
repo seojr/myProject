@@ -7,4 +7,6 @@ public class HrUserPVO extends HrUserDVO{
 	
 	private Boolean loginYn;
 	
+	private byte[] bytePwd;
+	
 }

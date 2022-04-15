@@ -9,6 +9,8 @@ public class HrUserDVO {
 	
 	private String usrId;
 	
+	private String usrNm;
+	
 	private String pwd;
 	
 	private String birthYmd;
@@ -20,4 +22,6 @@ public class HrUserDVO {
 	private String email;
 	
 	private String hpNo;
+	
+	private String salt;
 }

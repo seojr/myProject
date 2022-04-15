@@ -8,9 +8,14 @@
 </head>
 <body>
 	<form id="form1">
-		<input type="search" name="usrId" placeholder="ID" />
-		<input type="password" id="pwd" name="pwd" placeholder="PW" />
-		<input type="button" id="login" value="login" onClick="doLogin();" />
+		<div>
+			<input type="search" name="usrId" placeholder="ID" />
+			<input type="password" id="pwd" name="bytePwd" placeholder="PW" />
+			<input type="button" value="login" onClick="doLogin();" />
+		</div>
+		<div>
+			<input type="button" value="Go Join" onClick="goJoin();" />
+		</div>
 	</form>
 	
 	<script type="text/javascript">
@@ -20,9 +25,13 @@
 			if(event.keyCode === 13)
 				doLogin();
 		});
-	
+		
 		function doLogin(){
 			submit($("#form1"), "/login/login.do");
+		}
+		
+		function goJoin(){
+			submit($("#form1"), "/login/joinPage.do");
 		}
 	</script>
 </body>

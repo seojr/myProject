@@ -26,20 +26,27 @@ public class mainController {
 	@RequestMapping("/main/mainPage.do")
 	public ModelAndView getMainPage(HttpServletRequest request, @ModelAttribute("p") HrUserPVO p) {
 		ModelAndView mv = new ModelAndView();
-		String alert;
+		String alert = "로그인해주세요.";
+		Boolean joinYn = false;
 		
 		mv.setViewName("/main/mainPage");
 		
+		// /login/login.do 에서 로그인 처리 후 redirect(loginYn 성공 여부 체크)
 		Map<String, ?> flashMap = RequestContextUtils.getInputFlashMap(request);
-		Boolean loginYn = (Boolean)flashMap.get("loginYn");
-		log.debug("loginYn: " + loginYn);
-		
-		if(loginYn == null)
-			alert = "로그인해주세요.";
-		else if(loginYn)
+		if (flashMap != null) {
+			Boolean loginYn = (Boolean)flashMap.get("loginYn");
+			log.debug("loginYn: " + loginYn);
+			
+			if(loginYn)
 				alert = "로그인 성공";
-		else
-			alert = "로그인 실패";
+			else {
+				joinYn = (Boolean)flashMap.get("joinYn");
+				if(joinYn)
+					alert = "회원가입 성공! 로그인 해주세요.";
+				else
+					alert = "로그인 실패!";
+			}
+		}
 		
 		mv.addObject("alert", alert);
 		return mv;

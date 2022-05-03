@@ -1,10 +1,10 @@
-package com.platform.main.service;
+package com.myProject.main.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.platform.main.domain.TestTableDVO;
-import com.platform.main.mapper.TestTable;
+import com.myProject.main.domain.TestTableDVO;
+import com.myProject.main.mapper.TestTable;
 
 @Service
 public class TestTableService {

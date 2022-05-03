@@ -1,7 +1,8 @@
-package com.platform.main.mapper;
+package com.myProject.main.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import com.platform.main.domain.TestTableDVO;
+
+import com.myProject.main.domain.TestTableDVO;
 
 @Mapper
 public interface TestTable {

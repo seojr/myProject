@@ -1,12 +1,12 @@
-package com.platform.login.service;
+package com.myProject.login.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.platform.login.domain.HrUserDVO;
-import com.platform.login.domain.HrUserPVO;
-import com.platform.login.domain.HrUserRVO;
-import com.platform.login.mapper.HrUser;
+import com.myProject.login.domain.HrUserDVO;
+import com.myProject.login.domain.HrUserPVO;
+import com.myProject.login.domain.HrUserRVO;
+import com.myProject.login.mapper.HrUser;
 
 @Service
 public class HrUserService {

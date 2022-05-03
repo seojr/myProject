@@ -1,4 +1,4 @@
-package com.platform.main.domain;
+package com.myProject.main.domain;
 
 import lombok.Data;
 

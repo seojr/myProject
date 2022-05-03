@@ -1,4 +1,4 @@
-package com.platform.login.controller;
+package com.myProject.login.controller;
 
 import java.security.MessageDigest;
 import java.security.SecureRandom;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.platform.login.domain.HrUserPVO;
-import com.platform.login.domain.HrUserRVO;
-import com.platform.login.service.HrUserService;
+import com.myProject.login.domain.HrUserPVO;
+import com.myProject.login.domain.HrUserRVO;
+import com.myProject.login.service.HrUserService;
 
 import lombok.extern.slf4j.Slf4j;
 

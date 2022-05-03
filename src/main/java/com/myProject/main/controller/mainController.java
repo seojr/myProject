@@ -1,4 +1,4 @@
-package com.platform.main.controller;
+package com.myProject.main.controller;
 
 import java.util.Map;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
-import com.platform.login.domain.HrUserPVO;
-import com.platform.main.service.TestTableService;
+import com.myProject.login.domain.HrUserPVO;
+import com.myProject.main.service.TestTableService;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -9,7 +9,7 @@
 <body>
 	<form id="form1">
 	</form>
-	<img src="${pageContext.request.contextPath}/img/main_back1.jpeg" style="width:1425px;height:500px;">
+	<img src="${pageContext.request.contextPath}/img/main.jpeg" style="width:1425px;height:500px;">
 	<input type="button" value="Go Login" onClick="goLogin()" />
 	
 	<script type="text/javascript">

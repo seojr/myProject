@@ -6,11 +6,14 @@ import com.myProject.login.domain.HrUserDVO;
 import com.myProject.login.domain.HrUserPVO;
 import com.myProject.login.domain.HrUserRVO;
 
+import lombok.RequiredArgsConstructor;
+
 @Mapper
 public interface HrUser {
+	
 	public HrUserRVO read(String usrId);
 	
-	public Boolean readByIdAndPwd(HrUserPVO pvo);
+	public int readByIdAndPwd(HrUserPVO pvo);
 	
 	public int insert(HrUserPVO pvo);
 }

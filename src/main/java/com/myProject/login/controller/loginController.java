@@ -3,7 +3,6 @@ package com.myProject.login.controller;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.myProject.login.domain.HrUserPVO;
 import com.myProject.login.domain.HrUserRVO;
-import com.myProject.login.service.HrUserService;
+import com.myProject.login.service.HrUserServiceImpl;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,8 +19,15 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class loginController {
 
-	@Autowired
-	HrUserService hrUserService;
+//  field injection 제거 -> constructor injection 사용
+//	@Autowired
+//	HrUserServiceImpl hrUserServiceImpl;
+	
+	private final HrUserServiceImpl hrUserServiceImpl;
+	
+	public loginController(HrUserServiceImpl hrUserServiceImpl) {
+		this.hrUserServiceImpl = hrUserServiceImpl;
+	}
 	
 	// 로그인 페이지로 이동
 	@RequestMapping("/login/loginPage.do")
@@ -42,21 +48,21 @@ public class loginController {
 	// 로그인
 	@RequestMapping("/login/login.do")
 	public String doLogin(@ModelAttribute("p") HrUserPVO p, RedirectAttributes redirectAttributes) {
-		log.debug(p.getUsrId());
-		log.debug("pwd: " +  p.getBytePwd());
-		HrUserRVO rvo = hrUserService.read(p.getUsrId());
+		
+		HrUserRVO rvo = hrUserServiceImpl.read(p.getUsrId());
+		
 		try {
 			p.setPwd(hashing(p.getBytePwd(), rvo.getSalt()));
-			log.debug("salt: " + rvo.getSalt());
-			log.debug("pwd: " + p.getPwd());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		Boolean loginYn = hrUserService.readByIdAndPwd(p);
-
-		redirectAttributes.addFlashAttribute("loginYn", loginYn);
-		redirectAttributes.addFlashAttribute("joinYn", false);
-		return "redirect:/main/mainPage.do";
+		
+		int cnt = hrUserServiceImpl.readByIdAndPwd(p);
+		if(cnt > 0)
+			return "redirect:/main/mainPage.do";
+		else {
+			return "/login/login.do";
+		}
 	}
 	
 	// 회원가입
@@ -69,17 +75,16 @@ public class loginController {
 			p.setSalt(getSalt());
 			p.setPwd(hashing(p.getBytePwd(), p.getSalt()));
 			log.debug("bytePwd: " + p.getBytePwd());
-			check = hrUserService.insert(p);
+			check = hrUserServiceImpl.insert(p);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		log.debug("insert check: " + check);
 		if (check > 0) {
-			redirectAttributes.addFlashAttribute("joinYn", true);
-			redirectAttributes.addFlashAttribute("loginYn", false);
+			
 		}
-		return "redirect:/main/mainPage.do";
+		return "redirect:/login/login.do";
 	}
 	
 	//

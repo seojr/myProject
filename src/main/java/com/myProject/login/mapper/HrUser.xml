@@ -3,15 +3,11 @@
 <mapper namespace="com.myProject.login.mapper.HrUser">
 
 <select id="read" parameterType="String" resultType="hrUserRVO">
-	SELECT * FROM hr_user WHERE USR_ID = #{usrId}
+	SELECT usr_id, usr_nm, pwd, salt FROM hr_user WHERE USR_ID = #{usrId}
 </select>
 
-<select id="readByIdAndPwd" parameterType="hrUserPVO" resultType="Boolean">
-	SELECT CASE WHEN c.cnt = 0 THEN 'false' ELSE 'true' END
-	FROM
-		(
-			SELECT COUNT(usr_no) cnt FROM hr_user WHERE usr_id = #{usrId} AND pwd = #{pwd}
-		) c
+<select id="readByIdAndPwd" parameterType="hrUserPVO" resultType="Integer">
+	SELECT COUNT(usr_no) cnt FROM hr_user WHERE usr_id = #{usrId} AND pwd = #{pwd}
 </select>
 
 <insert id="insert" parameterType="hrUserPVO">
